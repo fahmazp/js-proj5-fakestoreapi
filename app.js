@@ -1,19 +1,17 @@
-// Get the container to display products
 const productsContainer = document.getElementById('products-container');
 
 // Function to fetch and display products
 async function fetchProducts() {
   try {
-    const response = await fetch('https://fakestoreapi.com/products'); // Fetch data from API
-    const products = await response.json(); // Parse JSON response
+    const response = await fetch('https://fakestoreapi.com/products'); 
+    const products = await response.json(); 
 
     // Loop through the products and create cards
     products.forEach(product => {
-      // Create a div with Bootstrap classes for each product card
+      
       const productCard = document.createElement('div');
       productCard.className = 'col-md-4 mb-4';
 
-      // Add card details using Bootstrap structure
       productCard.innerHTML = `
         <div class="card h-100">
           <div class="image-container" style="overflow: hidden; height: 200px;">
@@ -38,5 +36,4 @@ async function fetchProducts() {
   }
 }
 
-// Call the fetchProducts function
 fetchProducts();
